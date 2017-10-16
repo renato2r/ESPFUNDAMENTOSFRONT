@@ -1,14 +1,25 @@
-/*window.onload = function () {
-    lerTodasPessoas();
-}*/
+window.onload = function () {
+    console.log("aqui");    
+    var btSalvar2 = document.getElementById("btSalvar2");
+/*    var btLer2 = document.getElementById("btLer2");
+    var btApagar2 = document.getElementById("btApagar2"); */
+    
+    btSalvar2.onclick    = salvarPessoa;
+/*    btLer2.onclick     = lerPessoa;
+    btApagar2.onclick    = apagarPessoa; */
+    
+    //lerTodasPessoas();
+}
 
-function salvarPessoa() {
+/*function salvarPessoa() {
     var nome, idade, id, inputNome, inputidade,span; //VARIAVEIS PARA SALVAR PESSOA
-    inputNome = document.getElementById("nome");
+    inputNome = document.getElementById("nome2");
     inputidade = document.getElementById("idade");
     nome = inputNome.value;
     idade = parseInt(inputidade.value);
     id = parseInt(localStorage.length);
+    
+    alert("aui");
     
     var pessoa = {id: id+1, nome: nome, idade: idade};        
     
@@ -18,15 +29,12 @@ function salvarPessoa() {
     
     var pacienteTr = document.createElement("tr");
 
-    var idTd      = document.createElement("td");    
     var nomeTd    = document.createElement("td");
     var idadeTd   = document.createElement("td");
     
-    idTd.textContent    = id+1;
     nomeTd.textContent  = nome;
     idadeTd.textContent = idade;    
     
-    pacienteTr.appendChild(idTd);
     pacienteTr.appendChild(nomeTd);
     pacienteTr.appendChild(idadeTd);
     
@@ -35,8 +43,8 @@ function salvarPessoa() {
     
     span = document.getElementById("mensagem2");
     span.innerHTML = "Pessoa Salva!";
-} 
-/*
+}
+
 function lerPessoa() {
     var pessoa_json = localStorage.getItem("2");
     var span = document.getElementById("mensagem");
@@ -46,7 +54,7 @@ function lerPessoa() {
         var pessoa = JSON.parse(pessoa_json);
         span.innerHTML = "O nome é: " + pessoa.nome + " e a idade é: " + pessoa.idade;
     }
-} */
+}
 
 function lerTodasPessoas() {
     for (var i = 0; i < (localStorage.length+1); i++){
@@ -55,6 +63,7 @@ function lerTodasPessoas() {
         var pessoa_json = localStorage.getItem( text );
         if (pessoa_json != null){
             var pessoa = JSON.parse(pessoa_json);
+            //span.innerHTML = "O nome é: " + pessoa.nome + " e a idade é: " + pessoa.idade;
         
             var pacienteTr = document.createElement("tr");
 
@@ -71,10 +80,11 @@ function lerTodasPessoas() {
             pacienteTr.appendChild(idadeTd);
 
             var tabela = document.querySelector("#tabela-pacientes");
-            tabela.appendChild(pacienteTr);                            
+            tabela.appendChild(pacienteTr);                
+            
         }
     }
-}
+} 
 
 /*function apagarPessoa() {
     var nome, inputNome, span;
