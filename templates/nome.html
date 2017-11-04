@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Trabalho Front</title>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="spa.js"></script>
+    <script src="funcoes.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+
+    <div class="container well well-nm col-sm-9">
+        <h2>Nome</h2>
+        <form method="post" class="form-group" id="form" name="form">
+            <div class="row" id="nomeCompleto">
+                <div class="form-group col-md-6">
+                    <label for="txtNomeCompleto">Nome Completo</label>
+                    <input type="text" class="form-control" id="txtNomeCompleto" name="NomeCompleto" data-toggle="tooltip"
+                        title="O nome, também conhecido por nome completo, é formado pela concatenação, nesta ordem, dos títulos, do nomes atribuídos, dos sobrenomes e dos sufixos. Por exemplo, “Prof. Dr. Zacarias da Silva">
+                </div>
+            </div>
+            <div class="row" id="sobrenome">
+                <div class="form-group col-md-6">
+                    <label for="txtSobrenome">Sobrenome</label>
+                    <input type="text" class="form-control" id="txtSobrenome" name="Sobrenome" data-toggle="tooltip"
+                        title="Sobrenome">
+                </div>
+            </div>
+            <div class="row" id="titulo">
+                <div class="form-group col-md-6">
+                    <label for="txtTitulo">Titulo</label>
+                    <input type="text" class="form-control" id="txtTitulo" name="Titulo" data-toggle="tooltip"
+                        title="Titulação">
+                </div>
+            </div>
+            <div class="row" id="sufixo">
+                <div class="form-group col-md-6">
+                    <label for="txtSufixo">Sufixo</label>
+                    <input type="text" class="form-control" id="txtSufixo" name="Sufixo" data-toggle="tooltip"
+                        title="Sufixo">
+                </div>
+            </div>
+            <div class="row" id="uso">
+                <div class="form-group col-md-3">
+                    <label for="txtUso">Uso</label>
+                    <select class="form-control form-control-lg" id="txtUso" data-toggle="tooltip"
+                    title="Uso">
+                    <option value="R">Relatório (R)</option>
+                    <option value="N">Nome de recém-nascido (N)</option>
+                    <option value="C">Nome profissional ou comercial (C)</option>
+                    <option value="S">Nome de solteiro (S)</option>
+                    <option value="L">Nome registrado (L)</option>
+                    <option value="O">Outro nome (O)</option>    
+
+                </select>
+                </div>
+            </div>
+            <div class="col-md-2"><a href="#identificador"><span class="btn btn-primary">Anterior</span></a></div>
+            <div class="col-md-2"><a href="#dadosDemograficos"><span class="btn btn-primary" onclick="salvarNome()">Próximo</span></a></div>
+        </form>
+    </div>
+</body>
+
+</html>
