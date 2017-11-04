@@ -31,37 +31,23 @@
                                                         <label for="dtNascimento">Data de Nascimento</label>
                                                         <input type="date" class="form-control" id="txtDtNascimento" name="DtNascimento" data-toggle="tooltip" title="Data de Nascimento do Indivíduo">
                                                 </div>
+                                        </div>
+                                        <div class="row">
                                                 <div class="form-group col-md-9">
-                                                        <label for="indicadorAcuDtNascimento">Indicador de Acurácia da data de nascimento</label></br>
-                                                        Dia: <label class="radio"><input class="radio"
-                                                                                            type="radio"
-                                                                                            name="dia"
-                                                                                            value="A">
-                                                                    Acurado</label>
-                                                        <label class="radio"><input class="radio" type="radio"
-                                                                                            name="dia" value="E">
-                                                                    Estimado</label>
-                                                        <label class="radio"><input class="radio" type="radio"
-                                                                                            name="dia" value="U">
-                                                                    Desconhecido</label><br>                                                        Mês: <label class="radio"><input class="radio" type="radio"
-                                                                                         name="mes"
-                                                                                         value="A">
-                                                                Acurado</label>
-                                                        <label class="radio"><input class="radio" type="radio"
-                                                                                            name="mes" value="E">
-                                                                    Estimado</label>
-                                                        <label class="radio"><input class="radio" type="radio"
-                                                                                            name="mes" value="U">
-                                                                    Desconhecido</label><br>                                                        Ano: <label class="radio"><input class="radio" type="radio"
-                                                                                         name="ano"
-                                                                                         value="A">
-                                                                Acurado</label>
-                                                        <label class="radio"><input class="radio" type="radio"
-                                                                                            name="ano" value="E">
-                                                                    Estimado</label>
-                                                        <label class="radio"><input class="radio" type="radio"
-                                                                                            name="ano" value="U">
-                                                                    Desconhecido</label>
+                                                        <label>Dia</label>
+                                                        <input type="radio" name="dia" value="A"> Acurado
+                                                        <input type="radio" name="dia" value="E"> Estimado
+                                                        <input type="radio" name="dia" value="U"> Desconhecido </br>
+
+                                                        <label>Mês</label>
+                                                        <input type="radio" name="mes" value="A"> Acurado
+                                                        <input type="radio" name="mes" value="E"> Estimado
+                                                        <input type="radio" name="mes" value="U"> Desconhecido </br>
+
+                                                        <label>Ano</label>
+                                                        <input type="radio" name="ano" value="A"> Acurado
+                                                        <input type="radio" name="ano" value="E"> Estimado
+                                                        <input type="radio" name="ano" value="U"> Desconhecido </br>
                                                 </div>
                                                 <div class="form-group col-md-5">
                                                         <label for="indicadorSegDtNascimento">Indicador de Seguimento da data de nascimento</label>
@@ -75,7 +61,7 @@
                                 <div class="panel-heading">Óbito</div>
                                 <div class="panel-body">
                                         <div>
-                                                <div class="form-group col-md-2">
+                                                <div class="form-group col-md-4">
                                                         <label for="dtObito">Data do Óbito</label>
                                                         <div><input type="date" class="form-control" id="txtDtObito" name="DtObito"
                                                                         data-toggle="tooltip" title="Data do Óbito"></div>
@@ -84,57 +70,36 @@
                                         <div>
                                                 <div class="form-group col-md-12">
                                                         <label for="indicadorAcuDtObito">Indicador da Acurácia da Data do Óbito</label>
-                                                        <div>Dia:
-                                                                <label class="radio"><input class="radio"
-                                                                                                            type="radio"
-                                                                                                            name="dia"
-                                                                                                            value="A">
-                                                                                    Acurado</label>
-                                                                <label class="radio"><input class="radio" type="radio"
-                                                                                                            name="dia" value="E">
-                                                                                    Estimado</label>
-                                                                <label class="radio"><input class="radio" type="radio"
-                                                                                                            name="dia" value="U">
-                                                                                    Desconhecido</label><br>                                                                Mês: <label class="radio"><input class="radio" type="radio"
-                                                                                                         name="dia"
-                                                                                                         value="A">
-                                                                                Acurado</label>
-                                                                <label class="radio"><input class="radio" type="radio"
-                                                                                                            name="dia" value="E">
-                                                                                    Estimado</label>
-                                                                <label class="radio"><input class="radio" type="radio"
-                                                                                                            name="dia" value="U">
-                                                                                    Desconhecido</label><br>                                                                Ano: <label class="radio"><input class="radio" type="radio"
-                                                                                                         name="dia"
-                                                                                                         value="A">
-                                                                                Acurado</label>
-                                                                <label class="radio"><input class="radio" type="radio"
-                                                                                                            name="dia" value="E">
-                                                                                    Estimado</label>
-                                                                <label class="radio"><input class="radio" type="radio"
-                                                                                                            name="dia" value="U">
-                                                                                    Desconhecido</label></div>
+                                                        <div>
+                                                                <label>Dia</label>
+                                                                <input type="radio" name="diaObt" value="A"> Acurado
+                                                                <input type="radio" name="diaObt" value="E"> Estimado
+                                                                <input type="radio" name="diaObt" value="U"> Desconhecido </br>
+
+                                                                <label>Mês</label>
+                                                                <input type="radio" name="mesObt" value="A"> Acurado
+                                                                <input type="radio" name="mesObt" value="E"> Estimado
+                                                                <input type="radio" name="mesObt" value="U"> Desconhecido </br>
+
+                                                                <label>Ano</label>
+                                                                <input type="radio" name="anoObt" value="A"> Acurado
+                                                                <input type="radio" name="anoObt" value="E"> Estimado
+                                                                <input type="radio" name="anoObt" value="U"> Desconhecido </br>
+                                                        </div>
                                                 </div>
                                         </div>
                                         <div>
                                                 <div class="form-group col-md-10">
                                                         <label for="fonteNotObito">Fonte da Notificação do Óbito</label>
-                                                        <div><label class="checkbox-inline"><input class="checkbox-inline" type="radio"
-                                                                name="fonte" value="1">
-                                        Cartório</label>
-                                                                <label class="checkbox-inline"><input class="checkbox-inline" type="radio"
-                                                                name="fonte" value="2">
-                                        Prestador de assistência à saúde</label>
-                                                                <label class="checkbox-inline"><input class="checkbox-inline" type="radio"
-                                                                name="fonte" value="3">
-                                        Parente</label>
-                                                                <label class="checkbox-inline"><input class="checkbox-inline" type="radio"
-                                                                name="font" value="4">
-                                        Outro</label>
-                                                                <label class="checkbox-inline"><input class="checkbox-inline" type="radio"
-                                                                name="fonte" value="9"
-                                                                checked>
-                                        Desconhecido</label></div>
+                                                        <div>
+                                                            <input type="radio" name="fonte" value="1"> Cartório
+                                                            <input type="radio" name="fonte" value="2"> Prestador de
+                                                                Assistência à Saúde
+                                                            <input type="radio" name="fonte" value="3"> Parente
+                                                            <input type="radio" name="fonte" value="4"> Outro
+                                                            <input type="radio" name="fonte" value="9" checked> Desconhecido</br>
+
+                                                        </div>
                                                 </div>
                                         </div>
 
@@ -145,16 +110,13 @@
                                 <div class="panel-body">
                                         <div>
                                                 <label for="sexo">Sexo  </label>
-                                                <div class="radio-inline">
-
-                                                        <div><label><input type="radio" id="rdSexo" name="Sexo"
-                                                                        data-toggle="tooltip" title="Sexo">Masculino (M)</label></div>
-                                                        <div><label><input type="radio"  id="rdSexo" name="Sexo"
-                                                                                data-toggle="tooltip" title="Sexo">Feminino (F)</label></div>
-                                                        <div><label><input type="radio" id="rdSexo" name="Sexo"
-                                                                                        data-toggle="tooltip" title="Sexo">Intersexto ou Indetermidado (I)</label></div>
-                                                        <div><label><input type="radio"  id="rdSexo" name="Sexo"
-                                                                                                data-toggle="tooltip" title="Sexo">Não Declarado (U)</label></div>
+                                                <div>
+                                                        <input type="radio" name="Sexo" value="M" id="rdSexo"> Masculino(M) 
+                                                        <input type="radio" name="Sexo" value="F" id="rdSexo"> Feminino(F) 
+                                                        <input type="radio" name="Sexo" value="I" id="rdSexo"> Intersexo ou Indeterminado (I)  
+                                                        <input type="radio" name="Sexo" value="U" id="rdSexo"> Não Declarado (U) 
+                                                </br>  
+                                        </br>  
                                                 </div>
                                         </div>
                                         <div>
@@ -200,8 +162,8 @@
                                                                         <option value="Branco" selected>Branco</option>
                                                                         <option value="Negro">Negro</option>
                                                                         <option value="Pardo">Pardo</option>
-                                                                        <option value="Pardo">Amarelo</option>
-                                                                        <option value="Pardo">Indígena</option>
+                                                                        <option value="Amarelo">Amarelo</option>
+                                                                        <option value="Indígena">Indígena</option>
                                                         
                                                                 </select>
                                                         </div>
@@ -220,7 +182,7 @@
                                                         <label for="EstadoNasc">Estado de Nascimento</label>
                                                         <div><select id="estados" class="form-control">
                                                                                 <option value=""></option>
-                                                                        </select>
+                                                            </select>
                                                         </div>
                                                 </div>
                                         </div>
@@ -229,7 +191,7 @@
                                                         <label for="municipioNasc">Município de Nascimento</label>
                                                         <div><select id="cidades" class="form-control">
                                                                                         <option value=""></option>
-                                                                                </select>
+                                                            </select>
                                                         </div>
                                                 </div>
                                         </div>
@@ -428,7 +390,7 @@
                         <div>
                                 <div class="form-group col-md-3">
                                         <label for="PluralidadeNasc">Pluralidade do Nascimento</label>
-                                        <div><select class="form-control form-control-lg">
+                                        <div><select class="form-control form-control-lg" id="txtPluralidade">
                                                                         <option value="1">Único</option>
                                                                         <option value="2">Gêmeos</option>
                                                                         <option value="3">Trigêmeos</option>
@@ -441,7 +403,7 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                         <label for="OrdemNasc">Ordem de Nascimento</label>
-                                        <div><select class="form-control form-control-lg">
+                                        <div><select class="form-control form-control-lg" id="txtOrdemNascimento">
                                                                                 <option value="1">único ou primeiro</option>
                                                                                 <option value="2">segundo</option>
                                                                                 <option value="3">terceiro</option>
@@ -468,7 +430,7 @@
                 </div>
         </div>
         <div class="col-md-2"><a href="#nome"><span class="btn btn-primary">Anterior</span></a></div>
-        <div class="col-md-2"><a href="#endereco"><span class="btn btn-primary">Próximo</span></a></div>
+        <div class="col-md-2"><a href="#endereco"><span class="btn btn-primary" onclick="salvarDadosDemograficos()">Próximo</span></a></div>
         </form>
 </body>
 
