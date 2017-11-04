@@ -14,6 +14,7 @@
         <script src="spa.js"></script>
         <script src="funcoes.js"></script>
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        
 
 
 </head>
@@ -21,7 +22,7 @@
 <body>
         <div class="container well well-nm col-sm-9">
                 <h2>Dados Demográficos</h2>
-                <form method="post" class="form-group" id="form" name="form">
+                <form method="post" class="form-group" id="form" name="form" onload="document.location.reload(true)">
                         <div class="panel panel-info" id="idNascimento">
                                 <div class="panel-heading">Nascimento</div>
                                 <div class="panel-body">
@@ -35,19 +36,19 @@
                                         <div class="row">
                                                 <div class="form-group col-md-9">
                                                         <label>Dia</label>
-                                                        <input type="radio" name="dia" value="A"> Acurado
-                                                        <input type="radio" name="dia" value="E"> Estimado
-                                                        <input type="radio" name="dia" value="U"> Desconhecido </br>
+                                                        <input type="radio" name="diaNasc" value="A"> Acurado
+                                                        <input type="radio" name="diaNasc" value="E"> Estimado
+                                                        <input type="radio" name="diaNasc" value="U"> Desconhecido </br>
 
                                                         <label>Mês</label>
-                                                        <input type="radio" name="mes" value="A"> Acurado
-                                                        <input type="radio" name="mes" value="E"> Estimado
-                                                        <input type="radio" name="mes" value="U"> Desconhecido </br>
+                                                        <input type="radio" name="mesNasc" value="A"> Acurado
+                                                        <input type="radio" name="mesNasc" value="E"> Estimado
+                                                        <input type="radio" name="mesNasc" value="U"> Desconhecido </br>
 
                                                         <label>Ano</label>
-                                                        <input type="radio" name="ano" value="A"> Acurado
-                                                        <input type="radio" name="ano" value="E"> Estimado
-                                                        <input type="radio" name="ano" value="U"> Desconhecido </br>
+                                                        <input type="radio" name="anoNasc" value="A"> Acurado
+                                                        <input type="radio" name="anoNasc" value="E"> Estimado
+                                                        <input type="radio" name="anoNasc" value="U"> Desconhecido </br>
                                                 </div>
                                                 <div class="form-group col-md-5">
                                                         <label for="indicadorSegDtNascimento">Indicador de Seguimento da data de nascimento</label>
@@ -72,19 +73,19 @@
                                                         <label for="indicadorAcuDtObito">Indicador da Acurácia da Data do Óbito</label>
                                                         <div>
                                                                 <label>Dia</label>
-                                                                <input type="radio" name="diaObt" value="A"> Acurado
-                                                                <input type="radio" name="diaObt" value="E"> Estimado
-                                                                <input type="radio" name="diaObt" value="U"> Desconhecido </br>
+                                                                <input type="radio" name="diaObit" value="A"> Acurado
+                                                                <input type="radio" name="diaObit" value="E"> Estimado
+                                                                <input type="radio" name="diaObit" value="U"> Desconhecido </br>
 
                                                                 <label>Mês</label>
-                                                                <input type="radio" name="mesObt" value="A"> Acurado
-                                                                <input type="radio" name="mesObt" value="E"> Estimado
-                                                                <input type="radio" name="mesObt" value="U"> Desconhecido </br>
+                                                                <input type="radio" name="mesObit" value="A"> Acurado
+                                                                <input type="radio" name="mesObit" value="E"> Estimado
+                                                                <input type="radio" name="mesObit" value="U"> Desconhecido </br>
 
                                                                 <label>Ano</label>
-                                                                <input type="radio" name="anoObt" value="A"> Acurado
-                                                                <input type="radio" name="anoObt" value="E"> Estimado
-                                                                <input type="radio" name="anoObt" value="U"> Desconhecido </br>
+                                                                <input type="radio" name="anoObit" value="A"> Acurado
+                                                                <input type="radio" name="anoObit" value="E"> Estimado
+                                                                <input type="radio" name="anoObit" value="U"> Desconhecido </br>
                                                         </div>
                                                 </div>
                                         </div>
@@ -180,18 +181,18 @@
                                         <div>
                                                 <div class="form-group col-md-3">
                                                         <label for="EstadoNasc">Estado de Nascimento</label>
-                                                        <div><select id="estados" class="form-control">
-                                                                                <option value=""></option>
-                                                            </select>
+                                                        <div>
+                                                                <input type="text" class="form-control" id="estados" name="Estados"
+                                                                data-toggle="tooltip" title="Estado">
                                                         </div>
                                                 </div>
                                         </div>
                                         <div>
                                                 <div class="form-group col-md-3">
                                                         <label for="municipioNasc">Município de Nascimento</label>
-                                                        <div><select id="cidades" class="form-control">
-                                                                                        <option value=""></option>
-                                                            </select>
+                                                        <div>
+                                                                <input type="text" class="form-control" id="cidades" name="Cidades"
+                                                                data-toggle="tooltip" title="Cidades">
                                                         </div>
                                                 </div>
                                         </div>
