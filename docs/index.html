@@ -1,4 +1,51 @@
+<!DOCTYPE html>
 <html>
-<body>
+<head>
+	<title>Trabalho Front</title>
+	<meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>  
+    <link rel="stylesheet" href="bootstrap3/css/bootstrap.css">
+    <script src="bootstrap3/js/bootstrap.js"></script>
+    <script src="bootstrap3/js/jquery-3.2.1.min"></script>      
+    <script src="spa.js"></script>        
+    <script>
+        function myFunction() {
+            alert("Hello! I am an alert box!");
+        }
+    </script>            
+    <script src="funcoes.js"></script>        
+</head>
+<body ng-app="App">
+    
+    <div align = "center" class="btn-group-horizontal">
+        <div class="btn-group">
+           <a href="#/" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Home</a>
+        </div>
+        <div class="btn-group">
+           <a href="#identificador" class="btn btn-primary"> <span class="glyphicon glyphicon-user"></span> Identificador </a>
+        </div>
+        <div class="btn-group">    
+            <a href="#nome" class="btn btn-primary"><span class="glyphicon glyphicon-text-width"></span> Nome</a>
+        </div>
+        <div class="btn-group">
+            <a href="#dadosDemograficos" class="btn btn-primary"><span class="glyphicon glyphicon-globe"></span> Dados Demográficos</a>
+        </div>
+        <div class="btn-group">    
+            <a href="#endereco" class="btn btn-primary"><span class="glyphicon glyphicon-list-alt"></span> Endereço</a>
+        </div>
+        <div class="btn-group">    
+            <a href="#comunicacoes" class="btn btn-primary"><span class="glyphicon glyphicon-phone-alt"></span> Comunicações</a>
+        </div>
+        <div class="btn-group">
+            <a href="#vinculo" class="btn btn-primary"><span class="glyphicon glyphicon-retweet"></span> Vínculo</a>
+        </div>
+    </div>
+</br>
+
+<div ng-view></div>
 </body>
+
 </html>
+
+    

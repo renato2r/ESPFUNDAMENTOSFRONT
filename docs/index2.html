@@ -15,6 +15,7 @@
   <script src="bootstrap3/js/jquery.validate.js" type="text/javascript"></script>
   <script src="spa.js"></script>
   <script type="text/javascript">
+  //################################## Código para feedback e validação de campos ###################################################
     $(document).ready(function () {
       $("#form").validate({
         // Define as regras
@@ -27,13 +28,32 @@
             // DtEmissaoDocumento será uma data válida
             required: true, date: true
           },
-          campoEmail: {
-            // campoEmail será obrigatório (required) e precisará ser um e-mail válido (email)
-            required: true, email: true
+
+          NomeCartorio: {
+            // Livro precisará ser um inteiro válido
+            required: false, number: true
           },
-          campoMensagem: {
-            // campoMensagem será obrigatório (required) e terá tamanho mínimo (minLength)
-            required: true, minlength: 2
+
+          Livro: {
+            // Livro precisará ser um inteiro válido
+            required: false, number: true
+          },
+          Folha: {
+            // Folha precisará ser um inteiro válido
+            required: false, number: true
+          },
+
+          Termo: {
+            // Folha precisará ser um inteiro válido
+            required: false, number: true
+          },
+          TitSessaoEleitoral: {
+            // Sessão Eleitoral precisará ser um inteiro válido
+            required: false, number: true
+          },
+          Zona: {
+            // Zona precisará ser um inteiro válido
+            required: false, number: true
           }
         },
         // Define as mensagens de erro para cada regra
@@ -47,28 +67,144 @@
             date: "Informe uma data válida"
 
           },
-          campoEmail: {
-            required: "Digite o seu e-mail para contato",
-            email: "Digite um e-mail válido"
+          NomeCartorio: {
+            required: "Digite O nome do cartório que emitiu a certidão de nascimento, casamento ou divórcio",
+            digits: "Digite um número inteiro válido para o Livro"
           },
-          campoMensagem: {
-            required: "Digite a sua mensagem",
-            minLength: "A sua mensagem deve conter, no mínimo, 2 caracteres"
+          Livro: {
+            required: "Digite um número para o Livro",
+            number: "Digite um número inteiro válido para o Livro"
+          },
+          Folha: {
+            required: "Digite o Número da folha do livro no qual foi feito o registro da certidão no cartório",
+            number: "Digite o Número (inteiro) da folha do livro no qual foi feito o registro da certidão no cartório."
+          },
+          Termo: {
+            required: "Digite o Número da certidão constante no livro no qual foi lavrada a certidão no cartório",
+            number: "Digite o Número da certidão constante no livro no qual foi lavrada a certidão no cartório"
+          },
+          TitSessaoEleitoral: {
+            required: "Digite o Número da seção eleitoral do título de eleitor",
+            number: "Digite o Número da seção eleitoral do título de eleitor"
+          },
+          Zona: {
+            required: "Digite o Número da zona eleitoral do título de eleitor",
+            number: "Digite o Número da zona eleitoral do título de eleitor"
           }
         }
       });
     });
+
+    //#############################################################################################################################
   </script>
 
 
-<script type="text/javascript">
-                if ($("txtTipoIdentificador").blur(function () {
-                        alert("passou aqui");
-                }
+  <script type="text/javascript">
 
+  //#################### Código para habilitar e desabilitar Dinâmicamente os campos opcionais #####################################
+    $(document).ready(function () {
 
-                ));
-        </script>
+      // get Tipo do Identificador
+
+      //variaveis. Captura o valor do campo{
+      var tipoIdentificador = $('#txtTipoIdentificador');
+
+      //variaveis}  
+
+      //Desabilitando os campos opcionais. Inicia com os campos relacionados a Certidão de nascimento habilitados.
+      $("#txtNomeCartorio").attr("readonly", false);
+      $("#txtLivro").attr("readonly", false);
+      $("#txtFolha").attr("readonly", false);
+      $("#txtTermo").attr("readonly", false);
+      $("#txtSerie").attr("readonly", true);
+      $("#txtEstado").attr("disabled", true);
+      $("#txtSessaoEleitoral").attr("readonly", true);
+      $("#txtZona").attr("readonly", true);
+      
+
+      //Evento de seleção do campo Tipo de Identificador
+      tipoIdentificador.change(function () {
+        console.log(tipoIdentificador.val());
+
+        //Dependendo do Tipo de Identificador selecionado habilita os campos e esconde os outros campos opcionais
+        switch (tipoIdentificador.val()) {
+
+          case "carteiraTrab":
+
+            $("#txtSerie").attr("readonly", false);
+            $("#txtEstado").attr("disabled", false);
+            $("#idCarteira").fadeIn();
+            $("#idCertidao").fadeOut();
+            $("#idTitEleitor").fadeOut();
+            break;
+
+          case "certidaoNasc":
+
+            $("#txtNomeCartorio").attr("readonly", false);
+            $("#txtLivro").attr("readonly", false);
+            $("#txtFolha").attr("readonly", false);
+            $("#txtTermo").attr("readonly", false);
+
+            $("#idCertidao").fadeIn();
+            $("#idCarteira").fadeOut();
+            $("#idTitEleitor").fadeOut();
+            break;
+
+          case "tituloEleitor":
+
+            $("#txtSessaoEleitoral").attr("readonly", false);
+            $("#txtZona").attr("readonly", false);
+            $("#idTitEleitor").fadeIn();
+            $("#idCarteira").fadeOut();
+            $("#idCertidao").fadeOut();
+            break;
+
+        }
+      });
+      //final
+    });
+
+    //###############################################################################################
+  </script>
+
+  
+<script type="text/javascript">	
+  //##############Código para carregar Estados e Cidades Dinamicamente#############################
+  $(document).ready(function () {
+  
+    $.getJSON('estados_cidades.json', function (data) {
+      var items = [];
+      var options = '<option value="">escolha um estado</option>';	
+      $.each(data, function (key, val) {
+        options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+      });					
+      $("#estados").html(options);				
+      
+      $("#estados").change(function () {				
+      
+        var options_cidades = '';
+        var str = "";					
+        
+        $("#estados option:selected").each(function () {
+          str += $(this).text();
+        });
+        
+        $.each(data, function (key, val) {
+          if(val.nome == str) {							
+            $.each(val.cidades, function (key_city, val_city) {
+              options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+            });							
+          }
+        });
+        $("#cidades").html(options_cidades);
+        
+      }).change();		
+    
+    });
+  
+  });
+  //##########################################################################################
+</script>
 
   <style>
     * {
@@ -83,10 +219,10 @@
 
     label.error {
       float: none;
-      color: red;
+      color: crimson;
       margin: 0 .5em 0 0;
       vertical-align: top;
-      font-size: 10px
+      font-size: 12px
     }
 
     p {
@@ -113,7 +249,7 @@
     /* Set gray background color and 100% height */
 
     .sidenav {
-      background-color: black;
+      background-color:lightsteelblue;
       color: white;
       height: 100%;
     }
