@@ -727,3 +727,75 @@ function lerTodasPessoas() {
         }
     }
 }
+
+/*function apagarPessoa() {
+    var nome, inputNome, span;
+    inputNome = document.getElementById("nome");
+    nome = inputNome.value;
+    
+    localStorage.setItem("nomeSalvo", nome);
+
+    span = document.getElementById("mensagem");
+    span.innerHTML = "Nome Salvo!";
+} 
+
+function salvarIdentificador() {
+    var DesignacaoDoIndividuo, AreaDoIdentificador, EmissorDoIndentificador, DtEmissaoDocumento, TipoIdentificador, NomeCartorio, Livro, Folha, Termo, Serie, Estado, SessaoEleitoral, Zona, id, span; //VARIAVEIS PARA SALVAR PESSOA
+    var inputDesignacaoDoIndividuo, inputAreaDoIdentificador, inputEmissorDoIndentificador, inputDtEmissaoDocumento, inputTipoIdentificador, inputNomeCartorio, inputLivro, inputFolha, inputTermo, inputSerie, inputEstado, inputSessaoEleitoral, inputZona;
+    
+    inputDesignacaoDoIndividuo   = document.getElementById("txtDesignacaoDoIndividuo");
+    inputAreaDoIdentificador     = document.getElementById("txtAreaDoIdentificador");
+    inputEmissorDoIndentificador = document.getElementById("txtEmissorDoIndentificador");
+    inputDtEmissaoDocumento      = document.getElementById("txtDtEmissaoDocumento");
+    inputTipoIdentificador       = document.getElementById("txtTipoIdentificador");
+    
+    inputNomeCartorio            = document.getElementById("txtNomeCartorio");
+    inputLivro                   = document.getElementById("txtLivro");
+    inputFolha                   = document.getElementById("txtFolha");
+    inputTermo                   = document.getElementById("txtTermo");
+    
+    inputSerie                   = document.getElementById("txtSerie");
+    inputEstado                   = document.getElementById("txtEstado");    
+        
+    inputSessaoEleitoral         = document.getElementById("txtSessaoEleitoral");
+    inputZona                    = document.getElementById("txtZona");
+    
+    DesignacaoDoIndividuo   = inputDesignacaoDoIndividuo.value;
+    AreaDoIdentificador     = inputAreaDoIdentificador.value;
+    EmissorDoIndentificador = inputEmissorDoIndentificador.value;
+    DtEmissaoDocumento      = inputDtEmissaoDocumento.value;
+    TipoIdentificador       = inputTipoIdentificador.value;
+    NomeCartorio            = inputNomeCartorio.value;
+    Livro                   = inputLivro.value;
+    Folha                   = inputFolha.value;
+    Termo                   = inputTermo.value;
+    Serie                   = inputSerie.value;
+    Estado                  = inputEstado.value;
+    SessaoEleitoral         = inputSessaoEleitoral.value;
+    Zona                    = inputZona.value;
+    
+    id = parseInt(localStorage.length);
+    
+    var pessoa = {id: id+1,
+                  designacaoDoIndividuo: DesignacaoDoIndividuo,
+                  areaDoIdentificador: AreaDoIdentificador,
+                  emissorDoIndentificador: EmissorDoIndentificador,                  
+                  dtEmissaoDocumento: DtEmissaoDocumento,
+                  tipoIdentificador: TipoIdentificador,
+                  nomeCartorio: NomeCartorio,
+                  livro: Livro,
+                  folha: Folha,
+                  termo: Termo,
+                  serie: Serie,
+                  estado: Estado,
+                  sessaoEleitoral: SessaoEleitoral,
+                  zona: Zona};
+    
+    var pessoa_json = JSON.stringify(pessoa);
+    
+    localStorage.setItem(id+1, pessoa_json);    
+}
+
+
+*/
+
