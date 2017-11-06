@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
             templateUrl: "templates/home.html"
         })
         .when("/identificador", {
-            templateUrl: "templates/identificador.html"
+            templateUrl: "templates/DadosIdent.html"
         })
         .when("/nome", {
             templateUrl: "templates/nome.html"
